@@ -48,28 +48,55 @@
 // Snack 2
 // Inserisci un numero, se è pari stampa il numero, se è dispari stampa il numero successivo
 
-dichiaro la variabile che mi servirà
-var number = parseInt(prompt('Inserisci un numero'));
+// dichiaro la variabile che mi servirà
+// var number = parseInt(prompt('Inserisci un numero'));
 
-// validazione dato (se non è un numero me lo fa inserire di nuovo all'infinito finchè non lo è)
-while (isNaN(number)) {
-   var number = parseInt(prompt('Valore errato. Inserisci un numero'));
-}
+// // validazione dato (se non è un numero me lo fa inserire di nuovo all'infinito finchè non lo è)
+// while (isNaN(number)) {
+//    var number = parseInt(prompt('Valore errato. Inserisci un numero'));
+// }
 
-// controllo (tramite il modulo) se il numero inserito è pari o dispari e, di conseguenza, scelgo cosa stampare
-if (number % 2 === 0) {
-   console.log('Il tuo numero è pari:', number);
-} else {
-   // uso ++number per incrementare di uno il numero PRIMA che sia letto, in modo da stampare il numero successivo a quello inserito 
-   console.log('Il tuo numero è dispari, stampo il successivo:', ++number);
-}
+// // controllo (tramite il modulo) se il numero inserito è pari o dispari e, di conseguenza, scelgo cosa stampare
+// if (number % 2 === 0) {
+//    console.log('Il tuo numero è pari:', number);
+// } else {
+//    // uso ++number per incrementare di uno il numero PRIMA che sia letto, in modo da stampare il numero successivo a quello inserito 
+//    console.log('Il tuo numero è dispari, stampo il successivo:', ++number);
+// }
 
 
 
 // Snack 3
 // Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
 
+// creo i due array contenenti i nomi e i cognomi che userò
+var nomi = ['paolo', 'andrea', 'franco', 'giuseppe', 'gastani'];
+// console.log(nomi);
+ 
+var cognomi = ['duzioni', 'pizzi', 'calabro', 'scognamiglio', 'frinzi'];
+// console.log(cognomi);
 
+// creo l'array vuoto dove inserirò i nomi generati
+var nomiCognomi = [];
+
+// loop per generare il nome degli invitati
+while (nomiCognomi.length < 3) {
+ 
+   // gen index di nomi
+   var randomNomiIndex = Math.floor( Math.random() * nomi.length);
+ 
+   // gen index di cognomi
+   var randomCognomiIndex = Math.floor( Math.random() * cognomi.length);
+ 
+   // gen nome completo
+   var newFullName = nomi[randomNomiIndex] + ' ' + cognomi[randomCognomiIndex];
+ 
+   // aggiungo all'array vuoto il nome completo generato casualmente
+   nomiCognomi.push(newFullName);
+}
+
+// stampo l'array con i nomi generati
+console.log(nomiCognomi);
 
 
 // Snack 4
