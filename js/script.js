@@ -103,27 +103,61 @@
 // Crea un array di numeri interi e fai la somma di tutti gli elementi che sono in posizione dispari
 
 // inizializzo l'array di numeri e assegno 0 al valore di somma
-var numbers = [12, 15, 34, 38, 94, 63, 122, 4, 117];
-var sum = 0;
+// var numbers = [12, 15, 34, 38, 94, 63, 122, 4, 117];
+// var sum = 0;
 
-// stampo il valore di numbers per avere un riferimento visivo
-console.log(numbers);
+// // stampo il valore di numbers per avere un riferimento visivo
+// console.log(numbers);
 
-// creo il loop per sommare i numeri in posizione dispari nell'array
-for (var i = 0; i < numbers.length; i++) {
+// // creo il loop per sommare i numeri in posizione dispari nell'array
+// for (var i = 0; i < numbers.length; i++) {
    
-   // condizione da rispettare affinchè il numero possa essere sommato (se i % 2 !== 0 allora vuole dire che il numero ha indice dispari nell'array) 
-   if (i % 2 !== 0) {
+//    // condizione da rispettare affinchè il numero possa essere sommato (se i % 2 !== 0 allora vuole dire che il numero ha indice dispari nell'array) 
+//    if (i % 2 !== 0) {
 
-    // se la condizione è verificata, aggiungo il numero alla somma
-       sum += numbers[i];
-   }
-}
+//     // se la condizione è verificata, aggiungo il numero alla somma
+//        sum += numbers[i];
+//    }
+// }
 
-// stampo la somma dei numeri con indice dispari
-console.log('La somma dei numeri in posizione dispari è:', sum);
+// // stampo la somma dei numeri con indice dispari
+// console.log('La somma dei numeri in posizione dispari è:', sum);
 
 
 // Snack 5 - Bonus
 // Crea due array di numeri che hanno un numero di elementi diversi.
 // Aggiungi elementi all’array che ha meno elementi fino a quando ne avrà tanti quanti l’altro.
+
+// inizializzo i due array di numeri di lunghezza dicersa
+var firstArray = [12, 4, 65, 99, 135];
+var secondArray = [33, 45];
+console.log('Array iniziali:', firstArray, secondArray);
+
+// inizializzo una variabile che genera numeri random da 1 a 100 da inserire nell'array più corto
+var randomNumber = Math.floor( (Math.random() * 100) + 1);
+
+// confronto tra le lunghezze dei due array
+if (firstArray.length > secondArray.length) {
+    do {
+        secondArray.push(randomNumber);
+    } while (firstArray.length > secondArray.length);
+
+} else if (firstArray.length < secondArray.length) {
+    do {
+        firstArray.push(randomNumber);
+    } while (firstArray.length < secondArray.length);
+}
+
+// funziona anche così, senza bisogno di if (se la prima condizione è vera, la seconda viene ignorata e viceversa)
+// while (firstArray.length > secondArray.length) {
+//     secondArray.push(randomNumber);
+// }
+
+// while (firstArray.length < secondArray.length) {
+//     firstArray.push(randomNumber);
+// }
+
+// array finali (dopo il push in uno dei due)
+console.log(firstArray, secondArray);
+// stampa delle lunghezze finali
+console.log('Ora i due array hanno la stessa lungezza, cioè:', firstArray.length, secondArray.length);
