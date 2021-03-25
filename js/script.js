@@ -70,37 +70,58 @@
 // Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
 
 // creo i due array contenenti i nomi e i cognomi che userò
-var nomi = ['paolo', 'andrea', 'franco', 'giuseppe', 'gastani'];
-// console.log(nomi);
+// var nomi = ['paolo', 'andrea', 'franco', 'giuseppe', 'gastani'];
+// // console.log(nomi);
  
-var cognomi = ['duzioni', 'pizzi', 'calabro', 'scognamiglio', 'frinzi'];
-// console.log(cognomi);
+// var cognomi = ['duzioni', 'pizzi', 'calabro', 'scognamiglio', 'frinzi'];
+// // console.log(cognomi);
 
-// creo l'array vuoto dove inserirò i nomi generati
-var nomiCognomi = [];
+// // creo l'array vuoto dove inserirò i nomi generati
+// var nomiCognomi = [];
 
-// loop per generare il nome degli invitati
-while (nomiCognomi.length < 3) {
+// // loop per generare il nome degli invitati
+// while (nomiCognomi.length < 3) {
  
-   // gen index di nomi
-   var randomNomiIndex = Math.floor( Math.random() * nomi.length);
+//    // gen index di nomi
+//    var randomNomiIndex = Math.floor( Math.random() * nomi.length);
  
-   // gen index di cognomi
-   var randomCognomiIndex = Math.floor( Math.random() * cognomi.length);
+//    // gen index di cognomi
+//    var randomCognomiIndex = Math.floor( Math.random() * cognomi.length);
  
-   // gen nome completo
-   var newFullName = nomi[randomNomiIndex] + ' ' + cognomi[randomCognomiIndex];
+//    // gen nome completo
+//    var newFullName = nomi[randomNomiIndex] + ' ' + cognomi[randomCognomiIndex];
  
-   // aggiungo all'array vuoto il nome completo generato casualmente
-   nomiCognomi.push(newFullName);
-}
+//    // aggiungo all'array vuoto il nome completo generato casualmente
+//    nomiCognomi.push(newFullName);
+// }
 
-// stampo l'array con i nomi generati
-console.log(nomiCognomi);
+// // stampo l'array con i nomi generati
+// console.log(nomiCognomi);
 
 
 // Snack 4
 // Crea un array di numeri interi e fai la somma di tutti gli elementi che sono in posizione dispari
+
+// inizializzo l'array di numeri e assegno 0 al valore di somma
+var numbers = [12, 15, 34, 38, 94, 63, 122, 4, 117];
+var sum = 0;
+
+// stampo il valore di numbers per avere un riferimento visivo
+console.log(numbers);
+
+// creo il loop per sommare i numeri in posizione dispari nell'array
+for (var i = 0; i < numbers.length; i++) {
+   
+   // condizione da rispettare affinchè il numero possa essere sommato (se i % 2 !== 0 allora vuole dire che il numero ha indice dispari nell'array) 
+   if (i % 2 !== 0) {
+
+    // se la condizione è verificata, aggiungo il numero alla somma
+       sum += numbers[i];
+   }
+}
+
+// stampo la somma dei numeri con indice dispari
+console.log('La somma dei numeri in posizione dispari è:', sum);
 
 
 // Snack 5 - Bonus
